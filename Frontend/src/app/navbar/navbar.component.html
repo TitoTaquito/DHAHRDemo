@@ -1,0 +1,30 @@
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >HR</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a [routerLink]="['/employee']" >Employee Search</a>
+        </li>
+      </ul>
+      <div class="navbar-header navbar-right">
+        <ul class="nav navbar-nav">
+          <li>
+            <a>Welcome user</a>
+          </li>
+        </ul>
+      </div>
+      <form id="searchForm"  class="navbar-form navbar-right"  >
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search Sessions" >
+        </div>
+        <button class="btn btn-default" >
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
