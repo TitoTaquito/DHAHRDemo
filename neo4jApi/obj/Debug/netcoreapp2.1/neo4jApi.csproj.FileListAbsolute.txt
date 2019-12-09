@@ -1,0 +1,14 @@
+D:\VS\Test\HRServices\neo4jApi\bin\Debug\netcoreapp2.1\neo4jApi.deps.json
+D:\VS\Test\HRServices\neo4jApi\bin\Debug\netcoreapp2.1\neo4jApi.runtimeconfig.json
+D:\VS\Test\HRServices\neo4jApi\bin\Debug\netcoreapp2.1\neo4jApi.runtimeconfig.dev.json
+D:\VS\Test\HRServices\neo4jApi\bin\Debug\netcoreapp2.1\neo4jApi.dll
+D:\VS\Test\HRServices\neo4jApi\bin\Debug\netcoreapp2.1\neo4jApi.pdb
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.csproj.CoreCompileInputs.cache
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.RazorAssemblyInfo.cache
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.RazorAssemblyInfo.cs
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.AssemblyInfoInputs.cache
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.AssemblyInfo.cs
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.RazorTargetAssemblyInfo.cache
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.dll
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.pdb
+D:\VS\Test\HRServices\neo4jApi\obj\Debug\netcoreapp2.1\neo4jApi.csprojAssemblyReference.cache

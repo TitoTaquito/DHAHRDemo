@@ -1,0 +1,14 @@
+D:\VS\Test\HRServices\neo4jEmployeeService\bin\Debug\netcoreapp2.1\neo4jEmployeeService.deps.json
+D:\VS\Test\HRServices\neo4jEmployeeService\bin\Debug\netcoreapp2.1\neo4jEmployeeService.runtimeconfig.json
+D:\VS\Test\HRServices\neo4jEmployeeService\bin\Debug\netcoreapp2.1\neo4jEmployeeService.runtimeconfig.dev.json
+D:\VS\Test\HRServices\neo4jEmployeeService\bin\Debug\netcoreapp2.1\neo4jEmployeeService.dll
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.csprojAssemblyReference.cache
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.csproj.CoreCompileInputs.cache
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.RazorAssemblyInfo.cache
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.RazorAssemblyInfo.cs
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.AssemblyInfoInputs.cache
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.AssemblyInfo.cs
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.RazorTargetAssemblyInfo.cache
+D:\VS\Test\HRServices\neo4jEmployeeService\bin\Debug\netcoreapp2.1\neo4jEmployeeService.pdb
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.dll
+D:\VS\Test\HRServices\neo4jEmployeeService\obj\Debug\netcoreapp2.1\neo4jEmployeeService.pdb
