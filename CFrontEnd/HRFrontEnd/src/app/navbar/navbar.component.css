@@ -1,0 +1,12 @@
+.mat-toolbar {
+    color:white;
+    padding-right: 10px;
+}
+.spacer {
+    padding-left: 1em;
+    padding-right: 1em;
+    transform: scale(1,2);
+}
+ h1 {
+    font-size: 1.5em;
+}

@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    PCDR:
+  </mat-toolbar> 
+
+<div class="mat-elevation-z8">
+  <table #positionTable mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="positionNum">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let position"> {{position.positionNum}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="personnelNum">
+      <th mat-header-cell *matHeaderCellDef> Personnel Num </th>
+      <td mat-cell *matCellDef="let position"> {{position.personnelNum}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="workerCd">
+      <th mat-header-cell *matHeaderCellDef> worker code </th>
+      <td mat-cell *matCellDef="let position"> {{position.workerCd}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="accent" ></tr>
+    <tr mat-row (click)="somoneClicked(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator #positionPaginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+</div>
+
+<app-position-details [position]="detail" [hidden]="hide" ></app-position-details>
