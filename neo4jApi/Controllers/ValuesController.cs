@@ -19,7 +19,7 @@ namespace neo4jApi.Controllers
         public ValuesController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44363/");
+            client.BaseAddress = new Uri("http://position-micro:80/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EmployeeComponent } from './employee/employee.component';
-import {EmployeeService} from './Services/employee.service';
-import {HttpClientModule} from '@angular/common/http';
+import { EmployeeService } from './Services/employee.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule,MatToolbar } from '@angular/material';
 
 @NgModule({
    declarations: [
@@ -18,7 +20,10 @@ import {HttpClientModule} from '@angular/common/http';
       BrowserModule,
       AppRoutingModule,
       // tslint:disable-next-line: deprecation
-      HttpClientModule
+      MatTableModule,
+      HttpClientModule,
+      BrowserAnimationsModule,
+      MatToolbar
    ],
    providers: [
      EmployeeService,

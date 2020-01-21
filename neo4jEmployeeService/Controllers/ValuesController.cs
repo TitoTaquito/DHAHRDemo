@@ -38,7 +38,7 @@ namespace neo4jEmployeeService.Controllers
 
         public ValuesController()
         {
-            _driver = GraphDatabase.Driver("bolt://localhost:11008", AuthTokens.Basic("neo4j", "test"));
+            _driver = GraphDatabase.Driver("bolt://esdb:7687", AuthTokens.Basic("neo4j", "password"));
         }
 
         private IList<Result> runCypher(string script)
