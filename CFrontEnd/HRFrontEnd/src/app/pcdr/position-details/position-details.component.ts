@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Employee } from 'src/app/Models/employeeBundle.model';
 
 @Component({
   selector: 'app-position-details',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PositionDetailsComponent implements OnInit {
 
   @Input() position:Position;
+  @Input() employee:Employee;
 
   constructor() { }
 

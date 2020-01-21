@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatTableModule,MatToolbarModule, MatButtonModule, MatPaginatorModule } from '@angular/material';
+import { MatTableModule,MatToolbarModule, MatButtonModule, MatPaginatorModule, MatSort, MatSortModule } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
@@ -29,7 +29,8 @@ import { PositionDetailsComponent } from './pcdr/position-details/position-detai
     MatTableModule,
     MatToolbarModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     EmployeeService,

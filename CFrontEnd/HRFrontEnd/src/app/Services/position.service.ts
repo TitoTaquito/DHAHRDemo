@@ -8,10 +8,16 @@ import { Position } from '../Models/position.model';
 })
 
 export class PositionService {
-  apiUrl = 'https://localhost:44348/api/values';
+  id:string;
+  apiUrl = 'http://localhost:44348/api/values';
+  apiUrl2 = 'http://localhost:44348/api/values/'+ this.id;
   constructor(private http: HttpClient) {  }
   
   getAllPositions(): Observable < Position[] > {
         return this.http.get< Position[] >(this.apiUrl);
     };
+
+  getPositionById(): Observable <Position[]>{
+    return this.http.get<Position[]>(this.apiUrl2);
+  };
 }

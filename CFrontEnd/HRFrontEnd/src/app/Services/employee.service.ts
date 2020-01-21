@@ -7,10 +7,18 @@ import { EmployeeBundle } from '../Models/employeeBundle.model';
   providedIn: 'root'
 })
 export class EmployeeService {
- apiUrl = 'https://localhost:44348/api/Employee';
+ apiUrl = 'http://localhost:44348/api/Employee';
 constructor(private http: HttpClient) {  }
 
 getallEmployee(): Observable < EmployeeBundle[] > {
       return this.http.get<EmployeeBundle[]>(this.apiUrl);
   };
+
+getEmployee(id): Observable <EmployeeBundle[]>{
+    return this.http.get<EmployeeBundle[]>(this.apiUrl+'/'+id);
+  };
 }
+
+
+
+
