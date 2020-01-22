@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using neo4jApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,10 +17,10 @@ namespace neo4jApi.Controllers
     public class EmployeeController : Controller
     {
         HttpClient client;
-        public EmployeeController()
+        public EmployeeController(IConfiguration config)
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://employee-micro:80/");
+            client.BaseAddress = new Uri(config["EMP-MSLink"]);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

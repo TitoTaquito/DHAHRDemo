@@ -8,8 +8,7 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class EmployeeService {
- apiUrl = 'http://localhost:44348/api/Employee';
- //apiUrl = environment.apiurl+"/api/Employee";
+ apiUrl = environment.apiurl+"/api/Employee";
 constructor(private http: HttpClient) {  }
 
 getallEmployee(): Observable < EmployeeBundle[] > {

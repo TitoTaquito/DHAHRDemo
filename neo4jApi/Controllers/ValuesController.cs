@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using neo4jApi.Models;
 
 namespace neo4jApi.Controllers
@@ -16,10 +17,10 @@ namespace neo4jApi.Controllers
     {
         HttpClient client;
 
-        public ValuesController()
+        public ValuesController(IConfiguration config)
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://position-micro:80/");
+            client.BaseAddress = new Uri(config["POS-MSLink"]);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

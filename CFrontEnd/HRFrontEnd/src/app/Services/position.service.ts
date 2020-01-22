@@ -10,9 +10,7 @@ import { environment } from 'src/environments/environment';
 
 export class PositionService {
   id:string;
-  apiUrl = 'http://localhost:44348/api/values';
-  apiUrl2 = 'http://localhost:44348/api/values/'+ this.id;
-  //apiUrl = environment.apiurl+"/api/values";
+  apiUrl = environment.apiurl+'/api/values';
   constructor(private http: HttpClient) {  }
   
   getAllPositions(): Observable < Position[] > {
@@ -20,6 +18,6 @@ export class PositionService {
     };
 
   getPositionById(): Observable <Position[]>{
-    return this.http.get<Position[]>(this.apiUrl2);
+    return this.http.get<Position[]>(this.apiUrl+'/'+this.id);
   };
 }
