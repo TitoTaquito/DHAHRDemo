@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Neo4j.Driver.V1;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace neo4jPositionService.Controllers
 {
@@ -60,8 +61,10 @@ namespace neo4jPositionService.Controllers
         [HttpGet]
         public IEnumerable<Position> Get()
         {
+
             StringBuilder runinng = new StringBuilder("Match (n) return n");
             return runCypher(runinng.ToString());
+    
         }
 
         // GET api/values/5
@@ -74,20 +77,27 @@ namespace neo4jPositionService.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Position value)
         {
+            StringBuilder running = new StringBuilder("Create (n:Position{PositionNum:"+"'"+ value.PositionNum+"'"+",PersonnelNum:"+"'"+value.PersonnelNum+"'"+",WorkerCd:"+"'"+value.WorkerCd+"'"+"})");
+            runCypher(running.ToString());
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Position value)
         {
+            StringBuilder running = new StringBuilder("Match (n:Position)"+" where n.PositionNum =~ \".*"+id+".*\""+ "SET n.PersonnelNum = "+"'"+value.PersonnelNum+"', n.WorkerCd ="+"'"+value.WorkerCd+"'");
+            Console.Write(running);
+            runCypher(running.ToString());
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")] 
         public void Delete(int id)
         {
+            StringBuilder runing =  new StringBuilder("Match (n:Position) where n.PositionNum =~ \".*"+id+".*\" delete n");
+            runCypher(runing.ToString());
         }
     }
 }
