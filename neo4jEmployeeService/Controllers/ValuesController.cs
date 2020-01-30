@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Neo4j.Driver.V1;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace neo4jEmployeeService.Controllers
 {
@@ -30,6 +31,7 @@ namespace neo4jEmployeeService.Controllers
         public EmployeeAction employeeAction {get; set;}
     }
 
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -38,7 +40,7 @@ namespace neo4jEmployeeService.Controllers
 
         public ValuesController()
         {
-            _driver = GraphDatabase.Driver("bolt://localhost:11008", AuthTokens.Basic("neo4j", "test"));
+            _driver = GraphDatabase.Driver("bolt://localhost:11005", AuthTokens.Basic("neo4j", "test"));
         }
 
         private IList<Result> runCypher(string script)
@@ -92,9 +94,7 @@ namespace neo4jEmployeeService.Controllers
         [HttpGet]
         public IList<Result> Get()
         {
-
             StringBuilder runinng = new StringBuilder("Match (n:Employee)<-[*1]-(m:EmployeeAction) return n,m");
-
             return runCypher(runinng.ToString());
         }
 
@@ -108,20 +108,26 @@ namespace neo4jEmployeeService.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Result value)
         {
+            StringBuilder runinng = new StringBuilder(" Create(n:Employee{PersonnelNum:"+"'"+value.employee.PersonnelNum+"'"+",LastName:"+"'"+value.employee.LastName+"'"+",FirsName:"+"'"+value.employee.FirstName+"'"+",HomePhone:"+"'"+value.employee.HomePhone+"'"+"})<-[r:ACTION_FOR]-(m:EmployeeAction{EmployeeStatusCd:"+"'"+value.employeeAction.EmployeeStatusCd+"'"+",OfficeNum:"+"'"+value.employeeAction.OfficeNum+"'"+",Step:"+"'"+value.employeeAction.Step+"'"+",WorkPhone:"+"'"+value.employeeAction.WorkPhone+"'"+",WorkScheduleCd:"+"'"+value.employeeAction.WorkScheduleCd+"'"+"})");
+            runCypher(runinng.ToString());        
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Result value)
         {
+            StringBuilder runinng = new StringBuilder("Match (n:Employee)<-[r]-(m:EmployeeAction)" + "where n.PersonnelNum =~ \".*" + id + ".*\"" + "Set n.LastName =" + "'" + value.employee.LastName + "'" + ",n.FirstName = " + "'" + value.employee.FirstName + "'" + ",n.HomePhone = " + "'" + value.employee.HomePhone + "'" + ",m.EmployeeStatusCd = " + "'" + value.employeeAction.EmployeeStatusCd + "'" + ",m.OfficeNum = " + "'" + value.employeeAction.OfficeNum + "'" + ",m.Step =" + "'" + value.employeeAction.Step + "'" + ",m.WorkPhone = " + "'" + value.employeeAction.WorkPhone + "'" + ",m.WorkScheduleCd = " + "'" + value.employeeAction.WorkScheduleCd + "'");
+            runCypher(runinng.ToString());      
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            StringBuilder runinng = new StringBuilder("Match (n:Employee)<-[r]-(m:EmployeeAction) where n.PersonnelNum =~ \".*"+id+".*\" delete n,m,r");
+            runCypher(runinng.ToString());
         }
     }
 }
