@@ -1,0 +1,37 @@
+version: '3'
+services:
+  frontend:
+    build: .\CFrontEnd\HRFrontEnd
+    ports:
+      - "4200:4200"
+    depends_on:
+      - finalapi
+  finalapi:
+    build: .\neo4japi
+    ports:
+      - "5002:80"
+    depends_on:
+      - employee-micro
+      - position-micro
+  employee-micro:
+    build: .\neo4jEmployeeService\
+    ports: 
+      - "5000:80"
+    depends_on:
+      - esdb
+  position-micro:
+    build: .\neo4jPositionService\
+    ports: 
+      - "5001:80"
+    depends_on:
+      - posdb
+  esdb:
+    image: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+  posdb:
+    image: neo4j
+    ports:
+      - "7475:7474"
+      - "7688:7687"

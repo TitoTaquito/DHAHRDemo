@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Neo4j.Driver.V1;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Cors;
@@ -38,9 +39,9 @@ namespace neo4jEmployeeService.Controllers
     {
         private readonly IDriver _driver;
 
-        public ValuesController()
+        public ValuesController(IConfiguration config)
         {
-            _driver = GraphDatabase.Driver("bolt://localhost:11005", AuthTokens.Basic("neo4j", "test"));
+            _driver = GraphDatabase.Driver("bolt://"+config["DBServer"]+":"+config["DBPort"], AuthTokens.Basic(config["DBUser"], config["DBPassword"]));
         }
 
         private IList<Result> runCypher(string script)

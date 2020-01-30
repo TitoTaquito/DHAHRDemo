@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-.hoverwell:hover {
+/* .hoverwell:hover {
   background-color: #485563;
   cursor: pointer;
 }
@@ -32,4 +32,7 @@ button {
 }
 .toast-warning {
   background-color: #f89406;
-}
+} */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
